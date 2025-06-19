@@ -2,13 +2,12 @@ import path from 'node:path'
 import { unheadVueComposablesImports } from '@unhead/vue'
 import Unocss from 'unocss/vite'
 import AutoImport from 'unplugin-auto-import/vite'
-import Components from 'unplugin-vue-components/vite'
 import { VueRouterAutoImports } from 'unplugin-vue-router'
 import VueRouter from 'unplugin-vue-router/vite'
 import { defineConfig } from 'vite'
 import { VitePWA } from 'vite-plugin-pwa'
 import generateSitemap from 'vite-ssg-sitemap'
-import 'vitest/config'
+import { VineVitePlugin } from 'vue-vine/vite'
 
 export default defineConfig({
   resolve: {
@@ -46,15 +45,6 @@ export default defineConfig({
       vueTemplate: true,
     }),
 
-    // https://github.com/antfu/unplugin-vue-components
-    Components({
-      // allow auto load markdown components under `./src/components/`
-      extensions: ['vue', 'md'],
-      // allow auto import and register components used in markdown
-      include: [/\.vue$/, /\.vue\?vue/, /\.md$/],
-      dts: 'src/components.d.ts',
-    }),
-
     // https://github.com/antfu/unocss
     // see uno.config.ts for config
     Unocss(),
@@ -87,6 +77,8 @@ export default defineConfig({
         ],
       },
     }),
+
+    VineVitePlugin(),
   ],
   // https://github.com/antfu/vite-ssg
   ssgOptions: {

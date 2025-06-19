@@ -1,19 +1,16 @@
 {
   "type": "module",
   "private": true,
-  "packageManager": "pnpm@10.7.0",
+  "packageManager": "pnpm@10.12.1",
   "scripts": {
     "build": "vite-ssg build",
     "dev": "vite --port 3333 --open",
     "lint": "eslint ./src",
     "preview": "vite preview",
     "preview-https": "serve dist",
-    "test": "vitest",
     "test:e2e": "cypress open",
-    "test:unit": "vitest",
     "typecheck": "vue-tsc --noEmit",
     "up": "taze major -I",
-    "postinstall": "npx simple-git-hooks",
     "sizecheck": "npx vite-bundle-visualizer"
   },
   "dependencies": {
@@ -31,6 +28,7 @@
     "@iconify-json/carbon": "catalog:dev",
     "@types/nprogress": "catalog:types",
     "@unocss/eslint-config": "catalog:build",
+    "@vue-vine/eslint-config": "catalog:vine",
     "beasties": "catalog:build",
     "cypress": "catalog:dev",
     "cypress-vite": "catalog:dev",
@@ -38,10 +36,8 @@
     "eslint-plugin-cypress": "catalog:dev",
     "eslint-plugin-format": "catalog:dev",
     "https-localhost": "catalog:dev",
-    "lint-staged": "catalog:dev",
     "markdown-it-link-attributes": "catalog:build",
     "rollup": "catalog:build",
-    "simple-git-hooks": "catalog:dev",
     "taze": "catalog:dev",
     "typescript": "catalog:dev",
     "unocss": "catalog:build",
@@ -55,17 +51,12 @@
     "vite-plugin-vue-layouts": "catalog:build",
     "vite-ssg": "catalog:build",
     "vite-ssg-sitemap": "catalog:build",
-    "vue-tsc": "catalog:dev"
+    "vue-tsc": "catalog:dev",
+    "vue-vine": "catalog:vine"
   },
   "resolutions": {
     "unplugin": "catalog:build",
     "vite": "catalog:build",
     "vite-plugin-inspect": "catalog:build"
-  },
-  "simple-git-hooks": {
-    "pre-commit": "pnpm lint-staged"
-  },
-  "lint-staged": {
-    "*": "eslint --fix ./src"
   }
 }

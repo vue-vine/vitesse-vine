@@ -11,12 +11,11 @@
     },
     "resolveJsonModule": true,
     "types": [
-      "vitest",
       "vite/client",
       "vite-plugin-vue-layouts/client",
       "vite-plugin-pwa/client",
-      "unplugin-vue-macros/macros-global",
-      "unplugin-vue-router/client"
+      "unplugin-vue-router/client",
+      "vue-vine/macros"
     ],
     "allowJs": true,
     "strict": true,
@@ -27,12 +26,6 @@
     "forceConsistentCasingInFileNames": true,
     "isolatedModules": true,
     "skipLibCheck": true
-  },
-  "vueCompilerOptions": {
-    "plugins": [
-      "@vue-macros/volar/define-models",
-      "@vue-macros/volar/define-slots"
-    ]
   },
   "exclude": ["dist", "node_modules", "cypress"]
 }
