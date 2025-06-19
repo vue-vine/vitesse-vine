@@ -5,7 +5,7 @@
   "scripts": {
     "build": "vite-ssg build",
     "dev": "vite --port 3333 --open",
-    "lint": "eslint .",
+    "lint": "eslint ./src",
     "preview": "vite preview",
     "preview-https": "serve dist",
     "test": "vitest",
@@ -29,14 +29,8 @@
   "devDependencies": {
     "@antfu/eslint-config": "catalog:dev",
     "@iconify-json/carbon": "catalog:dev",
-    "@intlify/unplugin-vue-i18n": "catalog:build",
-    "@shikijs/markdown-it": "catalog:build",
-    "@types/markdown-it-link-attributes": "catalog:types",
     "@types/nprogress": "catalog:types",
     "@unocss/eslint-config": "catalog:build",
-    "@vitejs/plugin-vue": "catalog:build",
-    "@vue-macros/volar": "catalog:dev",
-    "@vue/test-utils": "catalog:dev",
     "beasties": "catalog:build",
     "cypress": "catalog:dev",
     "cypress-vite": "catalog:dev",
@@ -47,15 +41,11 @@
     "lint-staged": "catalog:dev",
     "markdown-it-link-attributes": "catalog:build",
     "rollup": "catalog:build",
-    "shiki": "catalog:build",
     "simple-git-hooks": "catalog:dev",
     "taze": "catalog:dev",
     "typescript": "catalog:dev",
     "unocss": "catalog:build",
     "unplugin-auto-import": "catalog:build",
-    "unplugin-vue-components": "catalog:build",
-    "unplugin-vue-macros": "catalog:build",
-    "unplugin-vue-markdown": "catalog:build",
     "unplugin-vue-router": "catalog:build",
     "vite": "catalog:build",
     "vite-bundle-visualizer": "catalog:build",
@@ -65,7 +55,6 @@
     "vite-plugin-vue-layouts": "catalog:build",
     "vite-ssg": "catalog:build",
     "vite-ssg-sitemap": "catalog:build",
-    "vitest": "catalog:dev",
     "vue-tsc": "catalog:dev"
   },
   "resolutions": {
@@ -77,6 +66,6 @@
     "pre-commit": "pnpm lint-staged"
   },
   "lint-staged": {
-    "*": "eslint --fix"
+    "*": "eslint --fix ./src"
   }
 }
