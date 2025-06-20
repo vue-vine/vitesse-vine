@@ -23,7 +23,9 @@ function App() {
     ],
   })
 
-  return vine`<RouterView />`
+  return vine`
+    <RouterView />
+`
 }
 
 export default App
