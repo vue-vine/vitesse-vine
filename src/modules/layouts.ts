@@ -8,7 +8,13 @@ interface LayoutModule {
 }
 
 interface PageModule {
-  default: Component
+  default: Component & {
+    __route?: {
+      meta?: {
+        layout?: string
+      }
+    }
+  }
   layoutName?: string
 }
 
@@ -51,8 +57,21 @@ async function setupLayouts(routes: RouteRecordRaw[]) {
               pageModule = route.component as PageModule
             }
 
-            if (pageModule && pageModule.layoutName) {
-              layoutName = pageModule.layoutName
+            // Check for different layout configuration methods
+            if (pageModule) {
+              // Method 1: layoutName export
+              if (pageModule.layoutName) {
+                layoutName = pageModule.layoutName
+              }
+              // Method 2: __route.meta.layout from component
+              else if (pageModule.default.__route?.meta?.layout) {
+                layoutName = pageModule.default.__route.meta.layout
+              }
+            }
+
+            // Method 3: route meta layout
+            if (route.meta?.layout && typeof route.meta.layout === 'string') {
+              layoutName = route.meta.layout
             }
           }
         }
@@ -71,6 +90,20 @@ async function setupLayouts(routes: RouteRecordRaw[]) {
         newRoute.meta = {
           ...newRoute.meta,
           layout: layoutName,
+        }
+        // Wrap the component with the layout
+        const originalComponent = newRoute.component
+        newRoute.component = layoutComponent
+
+        // Create a new route structure to include the page component as a child
+        if (originalComponent) {
+          newRoute.children = [
+            {
+              path: '',
+              component: originalComponent,
+              meta: newRoute.meta,
+            },
+          ]
         }
       }
 
