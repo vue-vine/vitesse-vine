@@ -1,5 +1,4 @@
 {
-  "type": "module",
   "private": true,
   "packageManager": "pnpm@10.12.1",
   "scripts": {
@@ -9,7 +8,7 @@
     "preview": "vite preview",
     "preview-https": "serve dist",
     "test:e2e": "cypress open",
-    "typecheck": "vue-tsc --noEmit",
+    "typecheck": "vue-vine-tsc --noEmit --noCache -b",
     "up": "taze major -I",
     "sizecheck": "npx vite-bundle-visualizer"
   },
@@ -51,8 +50,8 @@
     "vite-plugin-vue-layouts": "catalog:build",
     "vite-ssg": "catalog:build",
     "vite-ssg-sitemap": "catalog:build",
-    "vue-tsc": "catalog:dev",
-    "vue-vine": "catalog:vine"
+    "vue-vine": "catalog:vine",
+    "vue-vine-tsc": "catalog:vine"
   },
   "resolutions": {
     "unplugin": "catalog:build",
