@@ -3,7 +3,7 @@
 </p>
 
 <p align='center'>
-快速地<sup><em>Vitesse</em></sup> 创建 Web 应用
+快速地<sup><em>Vine Vitesse</em></sup> 创建 Web 应用
 <br>
 </p>
 
@@ -15,7 +15,9 @@
 
 <br>
 
-> **Note**: 本模板创建于 Vue 3 和 Vite 的早期过渡时期。目前，如果您正在寻求更好的 Vue 开发体验和更持续的维护，我们建议您使用 [Nuxt 3](https://nuxt.com) 来代替（它也可以根据需要使用 SPA 或 SSG）。本模板仍会作为参考缓慢地维护下去，但将不会有太多的更新。
+> **Note**: 本模板是从 [Vitesse](https://github.com/antfu/vitesse) 分叉而来。
+
+本模板创建于 Vue 3, Vine Vue 和 Vite 的早期过渡时期。目前，如果您正在寻求更好的 Vue 开发体验和更持续的维护，我们建议您使用 [Nuxt 3](https://nuxt.com) 来代替（它也可以根据需要使用 SPA 或 SSG）。本模板仍会作为参考缓慢地维护下去，但将不会有太多的更新。
 
 <br>
 
@@ -31,8 +33,6 @@
 
 - 🗂 [基于文件的路由](./src/pages)
 
-- 📦 [组件自动化加载](./src/components)
-
 - 🍍 [使用 Pinia 的状态管理](https://pinia.vuejs.org)
 
 - 📑 [布局系统](./src/layouts)
@@ -47,7 +47,7 @@
 
 - 🗒 [Markdown 支持](https://github.com/unplugin/unplugin-vue-markdown)
 
-- 🔥 使用 [新的 `<script setup>` 语法](https://github.com/vuejs/rfcs/pull/227)
+- 🔥 使用 [新的 `vue vine` 语法](https://vue-vine.dev/)
 
 - 📥 [API 自动加载](https://github.com/unplugin/unplugin-auto-import) - 直接使用 Composition API 无需引入
 
@@ -87,8 +87,8 @@
 
 ### 编码风格
 
-- 使用 Composition API 地 [`<script setup>` SFC 语法](https://github.com/vuejs/rfcs/pull/227)
-- [ESLint](https://eslint.org/) 配置为 [@antfu/eslint-config](https://github.com/antfu/eslint-config), 单引号, 无分号.
+- 使用 Composition API 地 [Vine 语法](https://vue-vine.dev/)
+- [ESLint](https://eslint.org/) 配置为 [@antfu/eslint-config](https://github.com/antfu/eslint-config) 和 [@vue-vine/eslint-config](https://github.com/vue-vine/vue-vine), 单引号, 无分号.
 
 ### 开发工具
 
@@ -104,6 +104,7 @@
   - [Iconify IntelliSense](https://marketplace.visualstudio.com/items?itemName=antfu.iconify) - 图标内联显示和自动补全
   - [i18n Ally](https://marketplace.visualstudio.com/items?itemName=lokalise.i18n-ally) - 多合一的 I18n 支持
   - [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
+  - [Vue Vine](https://marketplace.visualstudio.com/items?itemName=shenqingchuan.vue-vine-extension) - Vue Vine 支持
 
 ## 衍生项目
 
