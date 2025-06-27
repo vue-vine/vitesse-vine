@@ -94,7 +94,6 @@ This template is created during the early transition of Vue 3 and Vine Vue and V
 ### Dev tools
 
 - [TypeScript](https://www.typescriptlang.org/)
-- [Cypress](https://cypress.io/) - E2E testing
 - [pnpm](https://pnpm.js.org/) - fast, disk space efficient package manager
 - [`vite-ssg`](https://github.com/antfu/vite-ssg) - Static-site generation
   - [beasties](https://github.com/danielroe/beasties) - Critical CSS

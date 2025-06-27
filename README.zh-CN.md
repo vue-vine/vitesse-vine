@@ -93,7 +93,6 @@
 ### 开发工具
 
 - [TypeScript](https://www.typescriptlang.org/)
-- [Cypress](https://cypress.io/) - E2E 测试
 - [pnpm](https://pnpm.js.org/) - 快, 节省磁盘空间的包管理器
 - [`vite-ssg`](https://github.com/antfu/vite-ssg) - 服务端生成
   - [beasties](https://github.com/danielroe/beasties) - 关键 CSS 生成器

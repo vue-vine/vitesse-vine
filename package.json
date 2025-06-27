@@ -8,7 +8,6 @@
     "lint": "eslint ./src",
     "preview": "vite preview",
     "preview-https": "serve dist",
-    "test:e2e": "cypress open",
     "typecheck": "vue-vine-tsc --noEmit --noCache -b",
     "up": "taze major -I",
     "sizecheck": "npx vite-bundle-visualizer"
@@ -30,10 +29,7 @@
     "@unocss/eslint-config": "catalog:build",
     "@vue-vine/eslint-config": "catalog:vine",
     "beasties": "catalog:build",
-    "cypress": "catalog:dev",
-    "cypress-vite": "catalog:dev",
     "eslint": "catalog:dev",
-    "eslint-plugin-cypress": "catalog:dev",
     "eslint-plugin-format": "catalog:dev",
     "https-localhost": "catalog:dev",
     "markdown-it-link-attributes": "catalog:build",
