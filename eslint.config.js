@@ -23,4 +23,12 @@ export default antfu(
       'vue/no-unused-vars': 'off',
     },
   },
+  {
+    files: ['src/main.ts'],
+    rules: {
+      'antfu/no-top-level-await': 'off',
+      'unicorn/prefer-top-level-await': 'off',
+      'no-restricted-syntax': 'off',
+    },
+  },
 )

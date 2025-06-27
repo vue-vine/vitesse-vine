@@ -18,8 +18,9 @@ function IndexPage() {
 
   return vine`
     <div>
-      <div class="text-4xl">
+      <div class="w-full flex justify-center items-center text-4xl gap-4 mb-4">
         <div class="i-carbon-campsite inline-block" />
+        <img src="https://vue-vine.dev/vine-logo.png" class="inline-block w-1.2em h-1.2em" />
       </div>
 
       <p>

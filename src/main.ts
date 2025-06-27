@@ -42,4 +42,4 @@ async function setupApp() {
  * Create and configure the SSG app
  * https://github.com/antfu/vite-ssg
  */
-export const createApp = setupApp()
+export const createApp = await setupApp()
