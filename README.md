@@ -112,7 +112,7 @@ This template is created during the early transition of Vue 3 and Vine Vue and V
 
 ### GitHub Template
 
-[Create a repo from this template on GitHub](https://github.com/antfu-collective/vitesse/generate).
+[Create a repo from this template on GitHub](https://github.com/vue-vine/vitesse-vine/generate).
 
 ## Checklist
 
