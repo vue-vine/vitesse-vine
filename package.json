@@ -8,7 +8,7 @@
     "lint": "eslint ./src",
     "preview": "vite preview",
     "preview-https": "serve dist",
-    "typecheck": "vue-vine-tsc --noEmit --noCache -b",
+    "typecheck": "vue-vine-tsc --noEmit",
     "up": "taze major -I",
     "sizecheck": "npx vite-bundle-visualizer"
   },
