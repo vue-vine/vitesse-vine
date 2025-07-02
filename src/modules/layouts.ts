@@ -18,7 +18,7 @@ interface PageModule {
   layoutName?: string
 }
 
-async function setupLayouts(routes: RouteRecordRaw[]) {
+function setupLayouts(routes: RouteRecordRaw[]) {
   const layouts = import.meta.glob<LayoutModule>('../layouts/*.vine.ts', { eager: true })
 
   if (!layouts || Object.keys(layouts).length === 0) {
@@ -31,12 +31,12 @@ async function setupLayouts(routes: RouteRecordRaw[]) {
     layoutMap.set(layoutName, module.default)
   })
 
-  const processRoutes = async (routes: RouteRecordRaw[]): Promise<RouteRecordRaw[]> => {
-    const processedRoutes = await Promise.all(routes.map(async (route) => {
+  const processRoutes = (routes: RouteRecordRaw[]): RouteRecordRaw[] => {
+    const processedRoutes = routes.map((route) => {
       const newRoute = { ...route }
 
       if (route.children && route.children.length > 0) {
-        newRoute.children = await processRoutes(route.children)
+        newRoute.children = processRoutes(route.children)
         return newRoute
       }
 
@@ -49,9 +49,24 @@ async function setupLayouts(routes: RouteRecordRaw[]) {
           if (!isMarkdownRoute) {
             let pageModule: PageModule | null = null
 
+            // Check if component is already resolved or is a function that needs calling
             if (typeof route.component === 'function') {
-              const resolvedComponent = await (route.component as () => Promise<PageModule>)()
-              pageModule = resolvedComponent
+              // Try to call the function to see if it returns a component or Promise
+              try {
+                const result = (route.component as any)()
+                // If it returns a Promise, it's likely a dynamic import - skip async processing
+                if (result && typeof result.then === 'function') {
+                  console.warn(`Route ${route.path} has dynamic import component, skipping layout detection`)
+                  pageModule = null
+                }
+                else {
+                  pageModule = result as PageModule
+                }
+              }
+              catch {
+                // If calling fails, treat it as a component constructor
+                pageModule = route.component as unknown as PageModule
+              }
             }
             else {
               pageModule = route.component as PageModule
@@ -64,7 +79,7 @@ async function setupLayouts(routes: RouteRecordRaw[]) {
                 layoutName = pageModule.layoutName
               }
               // Method 2: __route.meta.layout from component
-              else if (pageModule.default.__route?.meta?.layout) {
+              else if (pageModule.default?.__route?.meta?.layout) {
                 layoutName = pageModule.default.__route.meta.layout
               }
             }
@@ -108,12 +123,12 @@ async function setupLayouts(routes: RouteRecordRaw[]) {
       }
 
       return newRoute
-    }))
+    })
 
     return processedRoutes
   }
 
-  const processedRoutes = await processRoutes(routes)
+  const processedRoutes = processRoutes(routes)
   return processedRoutes
 }
 

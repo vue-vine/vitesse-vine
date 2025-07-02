@@ -24,7 +24,9 @@ function IndexPage() {
       </div>
 
       <p>
-        <a rel="noreferrer" href="https://github.com/antfu/vitesse" target="_blank"> Vitesse </a>
+        <a rel="noreferrer" href="https://github.com/vue-vine/vitesse-vine" target="_blank">
+          Vitesse
+        </a>
       </p>
 
       <p>
@@ -35,8 +37,8 @@ function IndexPage() {
 
       <TheInput
         v-model="name"
-      :placeholder="t('intro.whats-your-name')"
-        autocomplete="false"
+        :placeholder="t('intro.whats-your-name')"
+      autocomplete="false"
         @keydown.enter="go"
       />
 
@@ -50,7 +52,7 @@ function IndexPage() {
         </button>
       </div>
     </div>
-  `
+`
 }
 
 export const layoutName = 'home'

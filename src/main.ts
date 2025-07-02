@@ -12,34 +12,20 @@ import './styles/main.css'
 import 'uno.css'
 
 /**
- * Install all user modules under `modules/`
- */
-function installModules(ctx: ViteSSGContext) {
-  const modules = import.meta.glob<{ install: UserModule }>('./modules/*.ts', { eager: true })
-
-  Object.values(modules).forEach((module) => {
-    module.install?.(ctx)
-  })
-}
-
-/**
- * Setup application with router and layouts
- */
-async function setupApp() {
-  const router = await setupLayouts(routes)
-
-  return ViteSSG(
-    App,
-    {
-      routes: router,
-      base: import.meta.env.BASE_URL,
-    },
-    installModules,
-  )
-}
-
-/**
  * Create and configure the SSG app
  * https://github.com/antfu/vite-ssg
  */
-export const createApp = await setupApp()
+export const createApp = ViteSSG(
+  App,
+  {
+    routes: setupLayouts(routes),
+    base: import.meta.env.BASE_URL,
+  },
+  (ctx: ViteSSGContext) => {
+    const modules = import.meta.glob<{ install: UserModule }>('./modules/*.ts', { eager: true })
+
+    Object.values(modules).forEach((module) => {
+      module.install?.(ctx)
+    })
+  },
+)

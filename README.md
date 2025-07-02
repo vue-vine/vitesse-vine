@@ -16,8 +16,6 @@ Mocking up web app with <b>Vine Vitesse</b><sup><em>(speed)</em></sup><br>
 
 > **Note**: This template is fork from [Vitesse](https://github.com/antfu/vitesse)
 
-This template is created during the early transition of Vue 3 and Vine Vue and Vite. At this moment, if you are seeking for better Vue developer experience and more consistent maintenance, we recommend using [Nuxt 3](https://nuxt.com) instead (it also works perfectly with SPA or SSG as needed). This template still serves as a reference, but expect slower updates.
-
 <br>
 
 <p align='center'>
@@ -30,6 +28,8 @@ This template is created during the early transition of Vue 3 and Vine Vue and V
 ## Features
 
 - ⚡️ [Vue 3](https://github.com/vuejs/core), [Vite](https://github.com/vitejs/vite), [pnpm](https://pnpm.io/), [esbuild](https://github.com/evanw/esbuild) - born with fastness
+
+- 🌿 [Vue Vine](https://vue-vine.dev/) - Another style to write Vue components
 
 - 🗂 [File based routing](./src/pages)
 

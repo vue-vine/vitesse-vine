@@ -19,6 +19,8 @@ export default defineConfig({
     target: 'esnext',
   },
   plugins: [
+    VineVitePlugin(),
+
     // https://github.com/posva/unplugin-vue-router
     VueRouter({
       extensions: ['.vue', '.md', '.vine.ts'],
@@ -79,8 +81,6 @@ export default defineConfig({
         ],
       },
     }),
-
-    VineVitePlugin(),
   ],
   // https://github.com/antfu/vite-ssg
   ssgOptions: {
