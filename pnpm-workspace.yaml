@@ -39,6 +39,7 @@ catalogs:
     vue-router: ^4.5.1
 
   types:
+    '@types/node': ^24.0.10
     '@types/nprogress': ^0.2.3
 
   vine:
