@@ -25,6 +25,7 @@
   "devDependencies": {
     "@antfu/eslint-config": "catalog:dev",
     "@iconify-json/carbon": "catalog:dev",
+    "@types/node": "^24.0.10",
     "@types/nprogress": "catalog:types",
     "@unocss/eslint-config": "catalog:build",
     "@vue-vine/eslint-config": "catalog:vine",
